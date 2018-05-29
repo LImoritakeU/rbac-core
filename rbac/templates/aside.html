@@ -1,0 +1,38 @@
+<div><img src="{{ url_for('static', filename="logo.png")}}" width="180px"></div>
+
+<ul class="cd-accordion-menu">
+  <li><a href="{{ url_for('index') }}"><i class="fas fa-universal-access"></i> Overview</a></li>
+  <li class="has-children">
+    <input type="checkbox" name="group-personal" id="group-personal">
+    <label for="group-personal"><i class="fas fa-user"></i> Personal</label>
+    <ul>
+      <li><a href="{{ url_for('user', name='Adam') }}">Adam</a></li>
+      <li><a href="{{ url_for('user', name='Andy') }}">Andy</a></li>
+      <li><a href="{{ url_for('user', name='Amy') }}">Amy</a></li>
+    </ul>
+  </li>
+
+
+  <li class="has-children">
+    <input type="checkbox" name ="group" id="group" checked>
+    <label for="group">Group</label>
+
+    <ul>
+      <li><a href="#0">Image</a></li>
+      <li><a href="#0">Image</a></li>
+      <li class="has-children">
+        <input type="checkbox" name ="sub-group-1" id="sub-group-1">
+        <label for="sub-group-1">Sub Group 1</label>
+
+        <ul>
+          <li><a href="#0">Image</a></li>
+          <li><a href="#0">Image</a></li>
+          <li><a href="#0">Image</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+
+  <li><a href="#0">Image</a></li>
+  <li><a href="#0">Image</a></li>
+</ul>

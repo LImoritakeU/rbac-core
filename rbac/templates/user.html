@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block title %}User Page{% endblock %}
+
+{% block main %}
+  <div class="row" style="min-height: 50px"></div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <h1>Personal Profile - {{ user.name }}</h1>
+      <table class="table">
+        <tbody>
+        <tr>
+          <th>Name</th>
+          <td>{{ user.name }}</td>
+        </tr>
+        <tr>
+          <th>Role(s)</th>
+          <td>
+            {% for role in user.roles %}
+            {{ role.name + " " }}
+            {% endfor %}
+          </td>
+        </tr>
+        <tr>
+          <th>Created Since</th>
+          <td>{{ user.created_at }}</td>
+        </tr>
+        <tr>
+          <th>Permission List</th>
+          <td>
+            <ul style="margin: 0; padding: 0;">
+            {% for permission in permissions %}
+              <li style="list-style-type: none;">
+              {% if user.is_allowed(permission) %}
+              {{ permission.name + "\t"}}
+              {% endif %}
+              </li>
+            {% endfor %}
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>Is Role Active?</th>
+          <td>{{ "True" if user.current_roles[0] in user.roles else "False" }}</td>
+        </tr>
+
+        </tbody>
+      </table>
+      <a href="{{ url_for('activate', name=user.name) }}">
+        <button type="button" class="btn btn-success">Activate Current Role</button>
+      </a>
+      <a href="{{ url_for('deactivate', name=user.name) }}">
+        <button type="button" class="btn btn-warning">Deactivate Current Role</button>
+      </a>
+    </div>
+    <div class="col-sm-12 col-md-6">
+      <img src="{{ url_for('static', filename=user.name|lower + ".png") }}" width="400px" alt="icon">
+    </div>
+  </div>
+
+{% endblock %}
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang={% block language %}{% endblock %}>
+<head>
+  {% block head %}
+
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %}</title>
+
+    {% block pre_loading %}
+    {% endblock pre_loading %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/bootstrap-4.1.0-dist/css/bootstrap.min.css') }}">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/fontawesome-free-5.0.13/svg-with-js/css/fa-svg-with-js.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/fontawesome-free-5.0.13/svg-with-js/js/fontawesome-all.min.js') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendors/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css') }}">
+  {% endblock head %}
+</head>
+<body>
+{% block body %}
+
+{% endblock body %}
+
+{% block post_loading %}
+  <!--jQuery-->
+  <script src="{{ url_for('static', filename='vendors/jquery-3.3.1.min.js')}}"></script>
+
+  <!--bootstrap4 cdn-->
+  <link rel="stylesheet" href="{{ url_for('static', filename='vendors/bootstrap-4.1.0-dist/js/bootstrap.min.js') }}">
+{% endblock %}
+</body>
+</html>

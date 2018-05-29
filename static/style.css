@@ -1,0 +1,82 @@
+table * {
+  font: 18px Tahoma ;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active_service {
+    background-color: #029d8d;
+}
+
+.unactive_service {
+    background-color: #9d0202;
+}
+
+form > *, form > * > *{
+  margin: 5px 5px ;
+}
+
+/*
+
+aside area
+
+*/
+aside {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #1b1e21;
+  color: #dbdff5;
+  font: 26px "Source Han Sans TW Heavy";
+}
+
+aside > * {
+  min-height: 50px;
+  padding: 10px;
+}
+
+/*https://codyhouse.co/gem/css-multi-level-accordion-menu*/
+.cd-accordion-menu {
+  list-style-type: none;
+}
+
+.cd-accordion-menu li {
+  min-height: 50px;
+}
+
+.cd-accordion-menu input[type=checkbox] {
+  /* hide native checkbox */
+  display: none;
+  opacity: 0;
+}
+  .cd-accordion-menu label, .cd-accordion-menu a {
+  display: block;
+  /*padding: 18px 18px 18px 64px;*/
+  color: #c1c4d8;
+}
+
+.cd-accordion-menu ul {
+  /* by default hide all sub menus */
+  display: none;
+}
+
+.cd-accordion-menu input[type=checkbox]:checked + label + ul,
+.cd-accordion-menu input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+  /* use label:nth-of-type(n) to fix a bug on safari (<= 8.0.8) with multiple adjacent-sibling selectors*/
+  /* show children when item is checked */
+  display: block;
+}
+
+
+/* header */
+
+header {
+}

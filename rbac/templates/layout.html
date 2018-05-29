@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <div class="wrap">
+    {% block grid_wrap %}
+      <aside>
+      {% block aside %}
+        {% include 'aside.html' %}
+      {% endblock %}
+      </aside>
+
+      <header>
+        {% block header %}
+          {% include 'header.html' %}
+        {% endblock %}
+      </header>
+
+      <main>
+        {% block main %}
+          This is main block
+        {% endblock %}
+      </main>
+
+
+    {% endblock grid_wrap %}
+  </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+
+* {box-sizing: border-box;}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #1b1e21 url('bg.jpg') center center fixed no-repeat;
+  background-size: cover;
+
+}
+
+.wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.wrap {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-areas:
+          "aside header"
+          "aside main";
+  grid-template-rows: auto 1fr;
+}
+
+aside {
+  grid-area: aside;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+  padding: 30px;
+  background-color: #eff1ef;
+}
+
+

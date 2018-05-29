@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block title %}Index Page{% endblock %}
+
+{% block main %}
+  <h1>Relationships</h1>
+  <h2>User Position</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th></th>
+      <th>Adam</th>
+      <th>Andy</th>
+      <th>Amy</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th>Position</th>
+      <td>General</td>
+      <td>Manager</td>
+      <td>Admin <span><i class="fas fa-users-cog"></i></span></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <h2>Position Permission</h2>
+  <table class="table">
+  <thead>
+  <tr>
+    <th>Permission\Role</th>
+    <th>General</th>
+    <th>Manager</th>
+    <th>Admin</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for permission in permissions %}
+    <tr>
+      <th>Can_{{ permission.name }}</th>
+      <td><span class="dot {{"active_service" if permission in general.permission else "unactive_service"}}"></span></td>
+      <td><span class="dot {{"active_service" if permission in manager.permission else "unactive_service"}}"></span></td>
+      <td><span class="dot {{"active_service" if permission in admin.permission else "unactive_service"}}"></span></td>
+    </tr>
+  {% endfor %}
+  </tbody>
+  </table>
+
+
+{% endblock %}
+
